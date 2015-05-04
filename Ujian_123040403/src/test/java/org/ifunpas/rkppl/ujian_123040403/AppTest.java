@@ -1,38 +1,32 @@
 package org.ifunpas.rkppl.ujian_123040403;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.After;
+
+import static org.junit.Assert.*;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+public class AppTest {
+
+    private static Soal so;
+
+    @Before
+    public void awalTest() {
+        so = new Soal();
+        System.out.println("Test dimulai");
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test
+    public void Test1() {
+        System.out.println("Nilai 2 pangkat 2 seharusnya 4");
+        assertEquals(4, so.pangkat(2, 2));
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @After
+    public void AkhirTest() {
+        System.out.println("Test Berakhir");
     }
 }
